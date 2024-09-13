@@ -1,0 +1,30 @@
+<!-- Table container -->
+<div class="table-container">
+  <!-- Display a loading message while data is being fetched -->
+  <div *ngIf="!dataSource.dataSubject.value.length" class="loading-message">
+    Fetching data, please wait...
+  </div>
+
+  <!-- Table -->
+  <table>
+    <!-- Table Header -->
+    <thead>
+      <tr>
+        <ng-container *ngFor="let column of displayedColumns">
+          <th>{{ column }}</th>
+        </ng-container>
+      </tr>
+    </thead>
+
+    <!-- Table Body -->
+    <tbody>
+      <tr *ngFor="let row of dataSource.dataSubject.value">
+        <ng-container *ngFor="let column of displayedColumns">
+          <td>
+            <app-cell [data]="row[column]">adad</app-cell>
+          </td>
+        </ng-container>
+      </tr>
+    </tbody>
+  </table>
+</div>
