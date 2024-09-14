@@ -162,6 +162,10 @@
     fill: var(--gray-900);
   }
 
+  .bg-main {
+    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+  }
+
   @media screen and (max-width: 650px) {
     .content {
       flex-direction: column;
@@ -177,8 +181,8 @@
   }
 </style>
 
-<main class="main">
-   <app-table> </app-table>
+<main class="main bg-main">
+   <app-table style="width: 100%;"> </app-table>
 </main>
 
 
