@@ -41,13 +41,16 @@
         </td>
       </ng-container>
 
+      <!-- Actions Column -->
       <ng-container matColumnDef="actions">
-        <th mat-header-cell *matHeaderCellDef> </th>
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
         <td mat-cell *matCellDef="let row">
-          <div>  <app-button
-            [text]="'Click Me'"
-            (click)="openDialog()"
-          ></app-button></div>
+          <div>
+            <app-button
+              [text]="'Click Me'"
+              (click)="openDialog(row)" 
+            ></app-button>
+          </div>
         </td>
       </ng-container>
 

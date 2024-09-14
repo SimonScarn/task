@@ -24,16 +24,16 @@ export class TableComponent implements OnInit {
 
   readonly dialog = inject(MatDialog);
 
-  openDialog(): void {
+  // Open the dialog with data from the clicked row
+  openDialog(rowData: PeriodicElement): void {
     const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
-      data: { name: 'John', animal: 'Dog' },
+      data: rowData, // Pass the clicked row data to the dialog
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('Dialog closed with result:', result);
-      // You can handle the result here, e.g., assign it to a property or perform other logic
+      // Handle the result here, e.g., updating the row or taking action based on the dialog output
     });
-    console.log('oppppp')
   }
 
   constructor(private cdr: ChangeDetectorRef) { // Inject ChangeDetectorRef
@@ -53,8 +53,10 @@ export class TableComponent implements OnInit {
     this.cdr.detectChanges(); // Trigger change detection
   }
 
-  onButtonClick() {
-    console.log('Button clicked!');
+  // Called when a button in the table is clicked
+  onButtonClick(rowData: PeriodicElement) {
+    console.log('Row button clicked!', rowData);
+    this.openDialog(rowData); // Pass row data to the dialog
   }
 }
 
