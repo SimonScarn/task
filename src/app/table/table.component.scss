@@ -8,3 +8,16 @@ table {
     font-size: 18px;
   }
   
+
+  .flex {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .table-wrapper {
+    flex: .9;
+  }
+
+  .search {
+    flex: .1;
+  }

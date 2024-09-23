@@ -1,0 +1,9 @@
+<mat-form-field appearance="fill">
+    <mat-label>Search</mat-label>
+    <input
+      matInput
+      [(ngModel)]="searchTerm"
+      placeholder="Filter by any field"
+      (ngModelChange)="onSearchChange($event)"
+    />
+  </mat-form-field>
